@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Video Streaming</title>
+        <link rel = "stylesheet" href = "{% static 'base.css' %}" >
+    </head>
+    <body>
+        <div class="navbar_base">
+            <div class = "title">Video Streaming</title></div>
+            <div class = "contents">
+                <div class= "login links"><a href = "#">Login</a></div>
+                <div class= "register links"><a href = "#">Register</a></div>
+                <div class= "home links"><a href = "#">Home</a></div>
+                
+                <div class="search">
+                    <input placeholder = "Search Movies..."   id = "searchInput" type = "text" name = "search_data">
+                </div>
+                
+            </div>
+        </div>
+        <div class="main">
+        {% block content %}
+        {% endblock %}
+        </div>
+    </body>
+    <script>
+    </script>
+</html>

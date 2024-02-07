@@ -1,0 +1,13 @@
+.movie_thumbnail{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px 250px;
+    color:#ff7d03;
+}
+.thumbnail img{
+    height: 250px;
+    width: 200px;
+}
+.thumbnail img:hover{
+    cursor: pointer;
+}
