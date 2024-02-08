@@ -1,0 +1,28 @@
+.movie_thumbnail{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 240px 240px 240px 240px 240px;
+    color:#ff7d03;
+}
+.thumbnail img{
+    height: 250px;
+    width: 200px;
+}
+.thumbnail img:hover{
+    cursor: pointer;
+}
+.movie_video_section{
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+/* Style for the video element */
+video {
+    width: 100%;
+    height: 500px;
+    display: block;
+    background-color: #000; /* Fallback color */
+}

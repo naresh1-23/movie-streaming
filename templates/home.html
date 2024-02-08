@@ -4,7 +4,7 @@
 <div class = "movie_thumbnail">
 {% for video in videos %}
 <div class="thumbnail">
-    <img src = "{{video.thumbnail.url}}" alt = "{{video.name}}" />
+    <a href = "{% url "movie" video.id %}"><img src = "{{video.thumbnail.url}}" alt = "{{video.name}}" /></a>
     <h3>{{video.name}}</h3>
 </div>
 {% endfor %}

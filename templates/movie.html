@@ -1,0 +1,26 @@
+{% extends "base.html" %}{% block content %}{% load static %}
+<link rel = "stylesheet" href = "{% static 'movie.css' %}">
+<div class = "movie_video_section">
+    <video id = "movie" preload = "auto" controls poster = "{{video.thumbnail.url}}">
+        <source src="{{video.video_url.url}}" type="video/mp4">
+    </video>
+    <div class="movie_detail">
+        <h2 style = "color: #ff7d03" >{{ video.name }}</h2>
+        <h3>Description</h3>
+        <p>{{ video.description }}</p>
+        <p>Rating: {{ video.rating }}/10</p>
+    </div>
+</div>
+<h1 class="trending" style = "color:#ff7d03">Trending Movies</h1>
+<div class = "movie_thumbnail">
+    {% for other_movie in other_movies %}
+    <div class="thumbnail">
+        <a href = "{% url "movie" other_movie.id %}"><img src = "{{other_movie.thumbnail.url}}" alt = "{{other_movie.name}}" /></a>
+        <h3>{{other_movie.name}}</h3>
+    </div>
+    {% endfor %}
+</div>
+<script>
+    
+</script>
+{% endblock %}
