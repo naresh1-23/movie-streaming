@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'videos',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'video_straming_project.wsgi.application'
+AUTH_USER_MODEL = "user.CustomUser"
+
 
 
 # Database
