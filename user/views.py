@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, logout
 from django.db.models import Q
 from django.contrib.auth.hashers import make_password
-from .models import CustomUser, PaymentDate
+from .models import CustomUser, PaymentDate, Subscription
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -12,6 +12,8 @@ def logoutUser(request):
     return redirect("login")
 
 def loginUser(request):
+    if request.user.is_authenticated:
+        return redirect("home")
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -35,6 +37,8 @@ def loginUser(request):
 
 
 def registerUser(request):
+    if request.user.is_authenticated:
+        return redirect("home")
     if request.method == "POST":
         username = request.POST["username"]
         email = request.POST["email"]
@@ -60,4 +64,5 @@ def registerUser(request):
 
 
 def subscriptionView(request):
-    return render(request, "subscriptionPage.html")
+    subscriptions = Subscription.objects.all()
+    return render(request, "subscriptionPage.html", {"subscriptions": subscriptions})
