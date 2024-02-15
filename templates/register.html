@@ -1,5 +1,12 @@
 {% load static %}
 <link rel = "stylesheet" href = "{% static "register.css" %}">
+{% if messages %}
+        {% for message in  messages %}
+        <div class = "messages">
+            <h2>{{ message }}</h2>
+        </div>
+        {% endfor %}
+        {% endif %}
 <div class="wrapper">
     <h2>Registration</h2>
     <form action="" method = "POST">

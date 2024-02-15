@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.messages{
+  color: white;
+}
 body{
   min-height: 100vh;
   display: flex;
